@@ -43,7 +43,6 @@ class Charts extends React.Component {
     }
 
     OrderbyArea(data, orderType) {
-        console.log(orderType)
         let returnedObj = {};
         let chartsFirstFilter = [];
         let chartsSecondFilter = [];
@@ -81,7 +80,6 @@ class Charts extends React.Component {
 
 
     OrderbyDate(data, orderType) {
-        console.log(orderType)
         let returnedObj = {};
         let chartsFirstFilter = [];
         let chartsSecondFilter = [];
@@ -119,7 +117,6 @@ class Charts extends React.Component {
     /// plan js 
 
     NoOfOrdersByTime(data) {
-        console.log("data", data)
         let returnedObj = [];
         let morning = 0, afternoon = 0, evening = 0, night = 0;
         data.map(function (time) {
@@ -146,9 +143,6 @@ class Charts extends React.Component {
             let item = { "x": timeKeys[i], "y": timeValuse[i] };
             returnedObj.push(item);
         }
-
-        console.log(returnedObj)
-
         return returnedObj
     }
 
