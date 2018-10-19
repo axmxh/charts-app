@@ -16,7 +16,6 @@
     "react-router": "^3.2.1",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.2.1",
-    "serve": "^6.5.8",
     "stylus": "0.54.5",
     "victory": "^30.5.0"
   },
