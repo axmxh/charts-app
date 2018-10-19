@@ -9,9 +9,6 @@ import BarChart from "./bar-chart";
 
 class Charts extends React.Component {
 
-    // state = {
-    //     orderedByPayment: []
-    // };
     OrderBy(data, orderType) {
         let returnedObj = {};
         let chartsFirstFilter = [];
@@ -42,7 +39,6 @@ class Charts extends React.Component {
         if (chartsSecondFilter != null) {
             returnedObj.chartsSecondFilter = chartsSecondFilter;
         }
-        //console.log(returnedObj)
         return returnedObj;
     }
 
@@ -80,7 +76,6 @@ class Charts extends React.Component {
         if (chartsSecondFilter != null) {
             returnedObj.chartsSecondFilter = chartsSecondFilter;
         }
-        //console.log(returnedObj)
         return returnedObj;
     }
 
@@ -130,7 +125,6 @@ class Charts extends React.Component {
         data.map(function (time) {
             let formatedTime = new Date(time.orderdate)
             let hours = formatedTime.getHours()
-            //console.log(hours);
             if (hours >= 6 && hours < 12) {
                 morning++;
             }
@@ -163,7 +157,6 @@ class Charts extends React.Component {
     } 
 
     render() {
-        //console.log(data);
         let noOfOrderedByPayment = this.OrderBy(data, ["paymentMethod"]);
         let revenueByPayment = this.OrderBy(data, ["paymentMethod", "orderAmount"]);
 
