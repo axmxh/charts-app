@@ -74,13 +74,12 @@ class Charts extends React.Component {
     }
 
     update(baymentMethod) {
-        //alert('ddddd');
-        console.log(this.state.orders);
+        //console.log(this.state.orders);
         let filterByCash = byPayment.filterFunction(d => d == baymentMethod).top(Infinity);
         let crossCash = crossfilter(filterByCash);
         let branchByCash = crossCash.dimension(d => d.branch.split(' ')[1]);
         let groupByPayment = branchByCash.group();
-        console.log("sssss", groupByPayment.all());
+        //console.log(groupByPayment.all());
         if (this.ordersByBranch == null) {
             this.init(this.state.orders);
 
