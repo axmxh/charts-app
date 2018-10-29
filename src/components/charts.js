@@ -55,27 +55,16 @@ class Charts extends React.Component {
         let byBranchValue = byBranch.group().reduceSum(d => Number(d.orderAmount.split('$')[1])).top(Infinity);
         // <===
 
-        //console.log(groupByBranch, groupByBranch.all(), byBranchValue);
-        // set status 
+        
         /*
         let filterByCash = byPayment.filterFunction(d => d == 'Cash').top(Infinity); 
         let crossCash = crossfilter(filterByCash);
         let branchByCash = crossCash.dimension(d => d.branch.split(' ')[1]);
         */
 
-        //console.log(branchByCash.group().all());
+        //console.log(groupByBranch, groupByBranch.all(), byBranchValue);
 
-        //let branchByCash = filterByCash.dimension(d => d.branch.split(' ')[1]);
-
-        /*
-        groupByBranch =  branchByCash.group();
-        console.log(groupByBranch.top(Infinity));
-        */
-
-        //console.log(byPayment.filterFunction(d => d == 'Cash').top(Infinity));
-        //console.log(cross.dimension(d => d.paymentMethod).group( d => d == 'Cash').all());
-        //console.log(groupByPayment.all())
-        console.log(groupByBranch, groupByBranch.all(), byBranchValue);
+        // set status 
         this.setState({
             ordersByPayment: groupByPayment.all(),
             revenueByPayment: byPaymentValue,
@@ -108,17 +97,12 @@ class Charts extends React.Component {
         //console.log(type)
         let typeOfOrder = this.state[type];
         let formattedData = []
-        //let item = {}
 
         for (let i = 0; i < typeOfOrder.length; i++) {
             let item = { 'x': `${typeOfOrder[i].key}\n ${typeOfOrder[i].value.toFixed(2)}`, 'y': typeOfOrder[i].value }
             formattedData.push(item)
         }
 
-        // this.setState({
-        //     formattedData
-        // })
-        //console.log(formattedData);
         return formattedData
     }
 

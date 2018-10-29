@@ -26,20 +26,10 @@ class PieChart extends React.Component {
                                     return [{
                                         target: "labels",
                                         mutation: (props) => {
-                                            let cross = crossfilter(data);
-                                            let byPayment = cross.dimension(d => d.paymentMethod);
-                                            // let filterByCash = byPayment.filterFunction(d => d == 'Cash').top(Infinity); 
-                                            // let crossCash = crossfilter(filterByCash);
-                                            // let branchByCash = crossCash.dimension(d => d.branch.split(' ')[1]);
-                                            // let groupByPayment =  branchByCash.group();
-                                            // console.log(groupByPayment.all());
-                                            // this.setState({
-                                            //     ordersByBranch: groupByPayment.all()
-                                            // })
                                             this.props.update(props.text.split('\n')[0]);
-                                            console.log(props.text)
-                                            return props.text === "clicked" ?
-                                                null : { text: "clicked" }
+                                            // console.log(props.text)
+                                            // return props.text === "clicked" ?
+                                            //     null : { text: "clicked" }
                                         }
                                     }];
                                 }
