@@ -75,14 +75,13 @@ class Charts extends React.Component {
 
     update(baymentMethod) {
         //console.log(this.state.orders);
-        let filterByCash = byPayment.filterFunction(d => d == baymentMethod).top(Infinity);
-        let crossCash = crossfilter(filterByCash);
-        let branchByCash = crossCash.dimension(d => d.branch.split(' ')[1]);
-        let groupByPayment = branchByCash.group();
+        let filterByPayment = byPayment.filterFunction(d => d == baymentMethod).top(Infinity);
+        let crossCash = crossfilter(filterByPayment);
+        let branchByPayment = crossCash.dimension(d => d.branch.split(' ')[1]);
+        let groupByPayment = branchByPayment.group();
         //console.log(groupByPayment.all());
         if (this.ordersByBranch == null) {
             this.init(this.state.orders);
-
         }
         else {
             this.setState({
@@ -112,7 +111,7 @@ class Charts extends React.Component {
                 <div className="pie-chart">
                     <p>Orders By Payment</p>
                     <PieChart data={this.format('ordersByPayment')} update={this.update} />
-                    <PieChart data={this.format('revenueByPayment')} />
+                    <PieChart data={this.format('revenueByPayment')} update={this.update} />
                 </div>
 
                 <div className="pie-chart">
