@@ -26,7 +26,12 @@ class PieChart extends React.Component {
                                     return [{
                                         target: "labels",
                                         mutation: (props) => {
-                                            this.props.update(props.text.split('\n')[0]);
+                                            try{
+                                                this.props.update(props.text.split('\n')[0]);
+                                            }
+                                            catch(err){
+                                                alert('Not implemented yet! :(')
+                                            }
                                             // console.log(props.text)
                                             // return props.text === "clicked" ?
                                             //     null : { text: "clicked" }
