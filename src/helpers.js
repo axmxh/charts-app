@@ -12,7 +12,7 @@ export function NoOfOrdersByPayment(data) {
         }
     })
     return [CreditCard, Cash, KNET];
-}3
+}
 
 // Morning 6am-12pm, Afternoon 12-5pm, Evening 5-8pm, Night 8pm-6am
 export function NoOfOrdersByTime(data) {

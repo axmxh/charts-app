@@ -80,7 +80,7 @@ class Charts extends React.Component {
         let branchByPayment = crossCash.dimension(d => d.branch.split(' ')[1]);
         let groupByPayment = branchByPayment.group();
         //console.log(groupByPayment.all());
-        if (this.ordersByBranch == null) {
+        if (this.state.ordersByBranch == null) {
             this.init(this.state.orders);
         }
         else {
